@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Weather App</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
-<body>
-<h1>BOM Weather</h1>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input type="text" class="search-bar" />
+        <button>&#x1F50D;</button>
+      </div>
+      <div class="weather">
+        <h2 class="city">Weather In Melbourne</h2>
+        <div class="temp">45°C</div>
+        <img src="" alt="" class="icon" />
+        <div class="description">Cloudy</div>
+        <div class="humidity">80%</div>
+        <div class="wind">Wind Speed: 8.5 km/ph</div>
+      </div>
+    </div>
 
-
-
-    <script src='main.js'></script>
-</body>
+    <script src="./assets/index.js"></script>
+  </body>
 </html>
