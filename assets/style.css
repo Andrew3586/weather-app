@@ -7,6 +7,10 @@ body {
   background: #222;
   font-family: Cambria, "Open Sans", serif;
   font-size: 120%;
+  background-image: url("../Images/ashutosh-saraswat-rHvEQtkRh4U-unsplash.jpg");
+  background-position: center center;
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed;  */
 }
 
 .card {
@@ -30,7 +34,7 @@ input.search-bar {
   outline: none;
   padding: 0.4em 1em;
   border-radius: 24px;
-  background: lightblue;
+  background: rgb(215, 228, 233);
   color: black;
   font-family: inherit;
   font-size: 105%;
@@ -48,7 +52,7 @@ button {
   height: 44px;
   width: 44px;
   outline: none;
-  background-color: lightblue;
+  background-color: rgb(215, 228, 233);
   color: black;
   cursor: pointer;
   transition: 0.2s ease-in-out;
