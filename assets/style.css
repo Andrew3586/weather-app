@@ -7,8 +7,8 @@ body {
   background: #222;
   font-family: Cambria, "Open Sans", serif;
   font-size: 120%;
-  background-image: url("../Images/ashutosh-saraswat-rHvEQtkRh4U-unsplash.jpg");
-  background-position: center center;
+  /* background-image: url("../Images/ashutosh-saraswat-rHvEQtkRh4U-unsplash.jpg"); */
+  /* background-position: center center; */
   /* background-repeat: no-repeat; */
   /* background-attachment: fixed;  */
 }
@@ -60,10 +60,18 @@ button {
 
 h1.temp {
   margin: 0;
+  margin-bottom: 0.4em;
+
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
 
 .description {
   text-transform: capitalize;
+  margin-left: 8px;
 }
 
 .daily {
@@ -83,4 +91,19 @@ h1.temp {
   width: 100%;
   bottom: -310px;
   text-align: center;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+
+}
+.weather.loading:after {
+  visibility: visible;
+  content: "Loading...";
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 20px;
 }

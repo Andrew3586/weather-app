@@ -1,8 +1,8 @@
 let weather = { 
     "apiKey": "9b1f679911ac53cd9b7ab5c58e255fce",
 fetchWeather: function (city) {
-    fetch (
-    "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=metric&appid="+ this.apiKey
+    fetch(
+    "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + this.apiKey
     )
 
 .then((response) => response.json())
@@ -13,14 +13,29 @@ displayWeather: function(data) {
     const { icon, description } = data.weather[0]
     const { temp, humidity } = data.main
     const { speed } = data.wind
-    console.log(name,icon,description,temp,humidity,speed)
     document.querySelector(".city").innertext = "weather in" + name
     document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png"
     document.querySelector(".description").innertext = description
     document.querySelector(".temp").innertext = temp + "°C"
     document.querySelector(".humidity").innertext = "humidity" + humidity + "%"
     document.querySelector(".wind").innertext = "wind speed:" + speed + "km/ph"
+    document.querySelector(".weather").classList.remove("loading")
+    document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"
 
 
+},
+search: function () {
+ this.fetchWeather(document.querySelector(".search-bar").value)
 }
+};
+document.querySelector(".search button").addEventListener("click", function () {
+weather.search()
+})
+
+document.querySelector(".search-bar").addEventListener("keyup", function (event){
+if (event.key == "Enter"){
+weather.search
 }
+});
+
+weather.fetchWeather(Melbourne)
