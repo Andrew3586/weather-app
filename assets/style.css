@@ -62,6 +62,10 @@ h1.temp {
   margin: 0;
 }
 
+.description {
+  text-transform: capitalize;
+}
+
 .daily {
   text-align: center;
   font-size: 145%;
