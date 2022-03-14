@@ -80,18 +80,18 @@ h1.temp {
   font-family: inherit;
 }
 
-.days {
-  float: left;
-  width: 0%;
-  line-height: 220%;
-}
+/* .days { */
+  /* float: left; */
+  /* width: 0%; */
+  /* line-height: 220%; */
+/* } */
 
-.alerts {
-  position: relative;
-  width: 100%;
-  bottom: -310px;
-  text-align: center;
-}
+/* .alerts { */
+  /* position: relative; */
+  /* width: 100%; */
+  /* bottom: -310px; */
+  /* text-align: center; */
+/* } */
 
 .weather.loading {
   visibility: hidden;
