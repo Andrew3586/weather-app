@@ -10,6 +10,7 @@ let weather = {
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
   },
+
   displayWeather: function (data) {
     console.log(data);
     const { name } = data;
@@ -46,4 +47,6 @@ document
     }
   });
 
-weather.fetchWeather("Sydney");
+weather.fetchWeather("Melbourne, Au");
+
+
