@@ -2,10 +2,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   margin: 0;
   font-family: Cambria, "Open Sans", serif;
   font-size: 120%;
+  line-height: 35px;
 }
 
 .card {
@@ -14,8 +15,8 @@ body {
   padding: 2em;
   border-radius: 30px;
   width: 100%;
-  max-width: 420px;
-  margin: 1em;
+  max-width: 490px;
+  margin: 2em;
 }
 
 .search {
@@ -36,6 +37,10 @@ input.search-bar {
   width: calc(100% - 100px);
 }
 
+.save button:hover {
+  background: #b9ad99;
+}
+
 button:hover {
   background: white;
 }
@@ -53,44 +58,78 @@ button {
   transition: 0.2s ease-in-out;
 }
 
+.save button {
+  border: none;
+  border-radius: 30px;
+  width: 140px;
+  height: 34px;
+  float: right;
+  color: black;
+  background-color: #9d8661;
+  outline-color: black;
+  outline-width: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  margin-top: 80px;
+}
+
+.cities {
+  margin-left: 352px;
+  margin-top: 6px;
+  line-height: 30px;
+  float: right;
+  
+}
+
 h1.temp {
-  margin: 0;
-  margin-bottom: 0.4em;
+  margin: 0; 
+
 }
 
 .flex {
   display: flex;
   align-items: center;
+  display: inline;
+  margin-top: -150px;
+  
+}
+
+.icon {
+  display: flex;
+  display: inline;
+  margin-bottom: 0.6em;
 }
 
 .description {
   text-transform: capitalize;
-  margin-left: 8px;
+  margin-left: 68px;
+  display: inline;
+  display: flex;
+  margin-top: -60px;
 }
-
-.daily {
-  text-align: center;
-  font-size: 145%;
-  font-family: inherit;
-}
-
-/* .days { */
-/* float: left; */
-/* width: 0%; */
-/* line-height: 220%; */
-/* } */
-
-/* .alerts { */
-/* position: relative; */
-/* width: 100%; */
-/* bottom: -310px; */
-/* text-align: center; */
-/* } */
 
 .weather.loading {
   visibility: hidden;
   max-height: 20px;
   position: relative;
+}
+
+.city {
+  margin-bottom: 18px;
+}
+
+.humidity {
+  display: flex;
+  margin-bottom: 88px;
+  display: table-row;
+  line-height: 40px;
+}
+
+.wind {
+  display: flex;
+  margin-bottom: 88px;
+  display: table-row;
+  line-height: 40px;
 }
 .weather.loading:after {
   visibility: visible;

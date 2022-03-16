@@ -18,7 +18,7 @@ let weather = {
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
     const { country } = data.sys;
-    document.querySelector(".country").innerText = "Country " + country;
+    document.querySelector(".country").innerText = " Country Code " + country;
     document.querySelector(".city").innerText = "Weather In " + name;
     document.querySelector(".icon").src =
       "https://openweathermap.org/img/wn/" + icon + ".png";
