@@ -1,4 +1,5 @@
-let weather = {
+const favourites=[]
+const weather = {
   apiKey: "9b1f679911ac53cd9b7ab5c58e255fce",
   fetchWeather: function (city) {
     fetch(
@@ -35,6 +36,20 @@ let weather = {
     this.fetchWeather(document.querySelector(".search-bar").value);
   },
 };
+document.querySelector("#favouritesButton").addEventListener("click", function () {
+   console.log(document.querySelector(".search-bar").value);
+   favourites.push(document.querySelector(".search-bar").value)
+   let txt = "";
+   favourites.forEach(myFunction);
+   document.querySelector(".cities").innerHTML = txt;
+  function myFunction(value)
+  {
+    txt +="<h4>"+ value + "</h4>"; 
+  }
+  
+
+})
+
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
 });

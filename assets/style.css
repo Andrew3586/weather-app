@@ -73,13 +73,19 @@ button {
   margin-top: 80px;
 }
 
+
 .cities {
   margin-left: 352px;
   margin-top: 6px;
   line-height: 30px;
   float: right;
-  
-}
+  }
+
+  h4 {
+  margin-left: -140px;
+  margin-top: 6px;
+  line-height: 5px;
+  }
 
 h1.temp {
   margin: 0; 
