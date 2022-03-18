@@ -1,7 +1,8 @@
-const favourites=[]
+const favourites = [];
 const weather = {
   apiKey: "9b1f679911ac53cd9b7ab5c58e255fce",
   fetchWeather: function (city) {
+    console.log(city)
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
@@ -36,20 +37,27 @@ const weather = {
     this.fetchWeather(document.querySelector(".search-bar").value);
   },
 };
-document.querySelector("#favouritesButton").addEventListener("click", function () {
-   console.log(document.querySelector(".search-bar").value);
-   favourites.push(document.querySelector(".search-bar").value)
-   let txt = "";
-   favourites.forEach(myFunction);
-   document.querySelector(".cities").innerHTML = txt;
-  function myFunction(value)
-  {
-    txt +="<h4>"+ value + "</h4>"; 
+document
+  .querySelector("#favouritesButton")
+  .addEventListener("click", function () {
+    const city = document.querySelector(".search-bar").value;
+    favourites.push(city);
+    let txt = "";
+    favourites.forEach(myFunction);
+    console.log(txt);
+    document.querySelector(".cities").innerHTML = txt;
+
+    function myFunction(value) {
+    txt += `<h4 onclick="fetchCityWeather(event)">` + value + "</h4>";
+    }
+  });
+
+  function fetchCityWeather(event) {
+    let city = event.target.innerText
+    console.log(city)
+    weather.fetchWeather(city)
+
   }
-  
-
-})
-
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
 });
@@ -63,5 +71,3 @@ document
   });
 
 weather.fetchWeather("Melbourne, Au");
-
-
