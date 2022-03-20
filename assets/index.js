@@ -5,9 +5,9 @@ const weather = {
     console.log(city)
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
-        city +
-        "&units=metric&appid=" +
-        this.apiKey
+      city +
+      "&units=metric&appid=" +
+      this.apiKey
     )
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
@@ -45,28 +45,28 @@ document
     let txt = "";
     favourites.forEach(myFunction);
     if (favourites.length < 6) {
-    // move logic to search and add city here
-
-  }
+      result = 'positive'
+    }
     else {
-      // add logic for error message here
+      result = 'NOT positive'
+      alert("You have reached your favourites limit")
+
     }
 
-    // for(cities; cities < 6 ; cities++)
     console.log(txt);
     document.querySelector(".cities").innerHTML = txt;
 
     function myFunction(value) {
-    txt += `<h4 onclick="fetchCityWeather(event)">` + value + "</h4>";
+      txt += `<h4 onclick="fetchCityWeather(event)">` + value + "</h4>";
     }
   });
 
-  function fetchCityWeather(event) {
-    let city = event.target.innerText
-    console.log(city)
-    weather.fetchWeather(city)
+function fetchCityWeather(event) {
+  let city = event.target.innerText
+  console.log(city)
+  weather.fetchWeather(city)
 
-  }
+}
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
 });
@@ -79,5 +79,5 @@ document
     }
   });
 
-  
+
 weather.fetchWeather("Melbourne, Au");
