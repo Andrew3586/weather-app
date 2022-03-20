@@ -44,6 +44,15 @@ document
     favourites.push(city);
     let txt = "";
     favourites.forEach(myFunction);
+    if (favourites.length < 6) {
+    // move logic to search and add city here
+
+  }
+    else {
+      // add logic for error message here
+    }
+
+    // for(cities; cities < 6 ; cities++)
     console.log(txt);
     document.querySelector(".cities").innerHTML = txt;
 
@@ -70,4 +79,5 @@ document
     }
   });
 
+  
 weather.fetchWeather("Melbourne, Au");
