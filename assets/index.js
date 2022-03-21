@@ -41,32 +41,42 @@ document
   .querySelector("#favouritesButton")
   .addEventListener("click", function () {
     const city = document.querySelector(".search-bar").value;
-    favourites.push(city);
     let txt = "";
-    favourites.forEach(myFunction);
-    if (favourites.length < 6) {
-      result = 'positive'
+    if (favourites.length < 5) {
+      favourites.push(city);
+      favourites.forEach(myFunction);
+      document.querySelector(".cities").innerHTML = txt;
+      console.log(favourites.length)
     }
     else {
       result = 'NOT positive'
       alert("You have reached your favourites limit")
-
     }
-
-    console.log(txt);
-    document.querySelector(".cities").innerHTML = txt;
 
     function myFunction(value) {
-      txt += `<h4 onclick="fetchCityWeather(event)">` + value + "</h4>";
+      txt += `<h4 onclick="fetchCityWeather(event)">` + value + "<button onclick='deleteCity(event)'>x</button></h4> ";
     }
+
   });
 
-function fetchCityWeather(event) {
-  let city = event.target.innerText
-  console.log(city)
-  weather.fetchWeather(city)
+function deleteCity(event) {
+  event.target.parentNode.remove()
 
 }
+
+function fetchCityWeather(event) {
+  console.log(event.target.tagName)
+  if (event.target.tagName === "H4") {
+    let city = event.target.innerText
+    weather.fetchWeather(city)
+  }
+
+  const index = array.indexOf(5);
+  if (index < 5) {
+    array.splice(index, 5);
+  }
+}
+
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
 });
